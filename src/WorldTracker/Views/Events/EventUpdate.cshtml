@@ -1,0 +1,40 @@
+﻿@model EventViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Events";
+}
+
+<div class="container">
+    <h2>Update Event</h2>
+    <form asp-controller="Events" asp-action="EventUpdate" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <input asp-for="ModifiedEvent.EventID" type="hidden" value=@Model.InitialEvent.EventID />
+
+        <div class="form-group">
+            <label asp-for="ModifiedEvent.Title"></label>
+            <input asp-for="ModifiedEvent.Title" value="@Model.InitialEvent.Title" class="form-control" />
+            <span asp-validation-for="ModifiedEvent.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedEvent.WorldDate"></label>
+            <input asp-for="ModifiedEvent.WorldDate" value="@Model.InitialEvent.WorldDate" class="form-control" />
+            <span asp-validation-for="ModifiedEvent.WorldDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedEvent.Description"></label>
+            <input asp-for="ModifiedEvent.Description" value="@Model.InitialEvent.Description" class="form-control" />
+            <span asp-validation-for="ModifiedEvent.Description" class="text-danger"></span>
+        </div>
+        <label asp-for="SiteName"></label><br />
+        <select asp-for="SiteName" class="form-control">
+            @foreach (var sn in Model.Locations)
+            {
+                <option value="@sn.Name">@sn.Name</option>
+            }
+        </select>
+        <span asp-validation-for="SiteName" class="text-danger"></span>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

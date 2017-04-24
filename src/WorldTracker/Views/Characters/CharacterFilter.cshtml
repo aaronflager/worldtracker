@@ -1,0 +1,45 @@
+﻿@model CharacterFilterViewModel
+
+@{
+    ViewBag.Title = "Characters";
+}
+
+<div class="container">
+    <h2>Filter Characters by Class</h2>
+    <form asp-controller="Characters" asp-action="CharacterFilterByClass" method="post">
+        <select asp-for="filterName" class="form-control">
+            @foreach (var c in Model.PriorCharacters)
+            {
+                <option value="@c.Class">@c.Class</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Character List</h2>
+    <div class="panel-group">
+        @foreach (var c in Model.Characters)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">@c.Name</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Class: @c.Class</li>
+                        <li class="list-group-item">Race: @c.Race</li>
+                        <li class="list-group-item">Background: @c.Background</li>
+                        <li class="list-group-item">Description: @c.Description</li>
+                        <li class="list-group-item">Backstory: @c.Backstory</li>
+                    </ul>
+                    <a href="@Url.Action("CharacterUpdate", "Characters", new { Name = c.Name, CharacterID = c.CharacterID })" class="btn btn-default">
+                        Update Character
+                    </a><br />
+                    <a href="@Url.Action("CharacterDelete", "Characters", c)" class="btn btn-default">
+                        Delete Character
+                    </a><br />
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMwBs1sXTnEKjR4snydmXyAAAAAACAAAAAAAQZgAAAAEAACAAAADyH1MVjN+3HbSBWIK0KoEN5eqrd6Parn+8w9ooM9xeNQAAAAAOgAAAAAIAACAAAACkcL9e9o8/syvxDn3eW+wA/McALsXCT3QU4j7dTwb3W4AAAADsKoxNo55cn2fIhcaxgwSthyQ+zN7zHKmDUOm5PpQZKvQ5jav96LbCh5mWrVc5K/XAnwAU2geX5C19NXWxTD3upjjMTmJABvfiKImtrJFtLAcSAIwvn5RFufwt+AqOCuhf02WC7icPq3963Yquzfe9s2RVzcJejd3YOn5pEgQ7dEAAAACci6DseJR2QpxXsqTcMyBdJhMnO9vzNUQIww2CPRRRVt1oWaHHi5PjDv9DBjxq3A8xLIbjY5NF/H7cm0WgYvfV</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <EfMigrations Include="WorldTracker.Repositories.AppIdentityDbContext">
+      <Value>Server=tcp:worldtrackeridentityserver.database.windows.net,1433;Initial Catalog=WorldTrackerIdentity_db;Persist Security Info=False;User ID=adminuser;Password=Secret123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</Value>
+    </EfMigrations>
+    <EfMigrations Include="WorldTracker.Repositories.ApplicationDbContext">
+      <Value>Server=tcp:worldtrackerserver.database.windows.net,1433;Initial Catalog=WorldTracker_db;Persist Security Info=False;User ID=adminuser;Password=Secret123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,44 @@
+﻿@model Character
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Characters";
+}
+
+<div class="container">
+    <h2>Add Character</h2>
+    <form asp-controller="Characters" asp-action="CharacterAdd" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Class"></label>
+            <input asp-for="Class" class="form-control" />
+            <span asp-validation-for="Class" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Race"></label>
+            <input asp-for="Race" class="form-control" />
+            <span asp-validation-for="Race" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Background"></label>
+            <input asp-for="Background" class="form-control" />
+            <span asp-validation-for="Background" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Backstory"></label>
+            <input asp-for="Backstory" class="form-control" />
+            <span asp-validation-for="Backstory" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

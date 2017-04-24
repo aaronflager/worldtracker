@@ -1,0 +1,32 @@
+﻿@model LocationViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Locations";
+}
+
+<div class="container">
+    <h2>Update Location</h2>
+    <form asp-controller="Locations" asp-action="LocationUpdate" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <input asp-for="ModifiedLoc.LocationID" type="hidden" value=@Model.InitialLoc.LocationID />
+
+        <div class="form-group">
+            <label asp-for="ModifiedLoc.Name"></label>
+            <input asp-for="ModifiedLoc.Name" value="@Model.InitialLoc.Name" class="form-control" />
+            <span asp-validation-for="ModifiedLoc.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedLoc.Description"></label>
+            <input asp-for="ModifiedLoc.Description" value="@Model.InitialLoc.Description" class="form-control" />
+            <span asp-validation-for="ModifiedLoc.Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedLoc.Geography"></label>
+            <input asp-for="ModifiedLoc.Geography" value="@Model.InitialLoc.Geography" class="form-control" />
+            <span asp-validation-for="ModifiedLoc.Geography" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

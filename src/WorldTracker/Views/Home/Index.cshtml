@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<div class="jumbotron text-center" style="font-family:Impact, Charcoal, sans-serif">
+    <h1>World Tracker</h1>
+    <p>Track the details of an ongoing Dungeons and Dragons gaming campaign</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h3 class="text-center">Characters</h3>
+            <p class="text-center">The adventurers of our world.</p>
+            <a href="@Url.Action("Index", "Characters")">
+                <img src="~/images/Adventure_Group.jpg" alt="Adventure Group" style="width:100%" />
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <h3 class="text-center">Events</h3>
+            <p class="text-center">Notable moments in the world's history.</p>
+            <a href="@Url.Action("Index", "Events")">
+                <img src="~/images/Dragon_Fight.jpg" alt="Dragon Fight" style="width:100%" />
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <h3 class="text-center">Locations</h3>
+            <p class="text-center">Details about notable sites.</p>
+            <a href="@Url.Action("Index", "Locations")">
+                <img src="~/images/Strange_Forest.jpg" alt="Strange Forest" style="width:100%" />
+            </a>
+        </div>
+    </div>
+</div>

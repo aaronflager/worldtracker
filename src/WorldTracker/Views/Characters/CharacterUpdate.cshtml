@@ -1,0 +1,47 @@
+﻿@model CharacterViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Characters";
+}
+
+<div class="container">
+    <h2>Update Character</h2>
+    <form asp-controller="Characters" asp-action="CharacterUpdate" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <input asp-for="ModifiedChar.CharacterID" type="hidden" value=@Model.InitialChar.CharacterID />
+
+        <div class="form-group">
+            <label asp-for="ModifiedChar.Name"></label>
+            <input asp-for="ModifiedChar.Name" value="@Model.InitialChar.Name" class="form-control" />
+            <span asp-validation-for="ModifiedChar.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedChar.Class"></label>
+            <input asp-for="ModifiedChar.Class" value="@Model.InitialChar.Class" class="form-control" />
+            <span asp-validation-for="ModifiedChar.Class" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedChar.Race"></label>
+            <input asp-for="ModifiedChar.Race" value="@Model.InitialChar.Race" class="form-control" />
+            <span asp-validation-for="ModifiedChar.Race" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedChar.Background"></label>
+            <input asp-for="ModifiedChar.Background" value="@Model.InitialChar.Background" class="form-control" />
+            <span asp-validation-for="ModifiedChar.Background" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedChar.Description"></label>
+            <input asp-for="ModifiedChar.Description" value="@Model.InitialChar.Description" class="form-control" />
+            <span asp-validation-for="ModifiedChar.Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ModifiedChar.Backstory"></label>
+            <input asp-for="ModifiedChar.Backstory" value="@Model.InitialChar.Backstory" class="form-control" />
+            <span asp-validation-for="ModifiedChar.Backstory" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

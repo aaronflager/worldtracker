@@ -1,0 +1,36 @@
+﻿@model List<Event>
+
+@{
+    ViewBag.Title = "Events";
+}
+
+<div class="container">
+    <a href="@Url.Action("EventAdd", "Events")" class="btn btn-primary">
+        Add Event
+    </a><br />
+</div>
+
+<div class="container">
+    <h2>Event List</h2>
+    <div class="panel-group">
+        @foreach (var e in Model)
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading">@e.Title</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">World Date: @e.WorldDate</li>
+                        <li class="list-group-item">Site: @e.Site.Name</li>
+                        <li class="list-group-item">Description: @e.Description</li>
+                    </ul>
+                    <a href="@Url.Action("EventUpdate", "Events", new { Name = e.Title, EventID = e.EventID })" class="btn btn-default">
+                        Update Event
+                    </a><br />
+                    <a href="@Url.Action("EventDelete", "Events", e)" class="btn btn-default">
+                        Delete Event
+                    </a><br />
+                </div>
+            </div>
+        }
+    </div>
+</div>
